@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Summary of Last Batch Job Runs" icon-name="standard:announcement">
+        <div class="slds-m-bottom_small">
+            <p class="slds-p-horizontal_small">
+                <strong>Last Intake Batch Job Run:</strong>
+                <br>
+                {lastIntakeRunTime}
+            </p>
+            <p class="slds-p-horizontal_small">
+                <strong>Next Intake Batch Job Run:</strong>
+                <br>
+                {nextIntakeRunTime}
+            </p>
+        </div>
+        <div class="slds-m-bottom_small">
+            <p class="slds-p-horizontal_small">
+                <strong>Last Outbound Batch Job Run:</strong>
+                {lastOutboundRunTime}
+            </p>
+            <p class="slds-p-horizontal_small">
+                <strong>Next Outbound Batch Job Run:</strong>
+                {nextOutboundRunTime}
+            </p>
+        </div>
+    </lightning-card> 
+</template>

@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="My Work">
+        <div class="slds-align_absolute-center slds-m-vertical_x-small">
+            <lightning-button
+                variant="brand"
+                disabled={disableOpen}
+                label="Open Case in MEDSS"
+                onclick={startInterview}
+            ></lightning-button>
+        </div>
+        <div class="slds-align_absolute-center slds-m-vertical_x-small">
+            <lightning-button
+                variant="destructive"
+                disabled={disableCompleteInterview}
+                label="Call Attempted"
+                onclick={callAttempted}
+            >
+            </lightning-button>
+        </div>
+        <div class="slds-align_absolute-center slds-m-vertical_x-small">
+            <lightning-button
+                variant="success"
+                disabled={disableCompleteInterview}
+                label="Next Portal Case"
+                onclick={completeInterview}
+            >
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

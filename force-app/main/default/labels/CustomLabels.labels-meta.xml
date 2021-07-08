@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AttentionAccessWarning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttentionAccessWarning</shortDescription>
+        <value>Access to this service is for authorized personnel only.</value>
+    </labels>
+    <labels>
+        <fullName>AttentionHeading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttentionHeading</shortDescription>
+        <value>ATTENTION:</value>
+    </labels>
+    <labels>
+        <fullName>AttentionMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AttentionMessage</shortDescription>
+        <value
+        >If you do not have the express authorization of the Minnesota Department of Health division and section management you must exit now or face the consequences of violating Minnesota Statutes, Chapter 13, and other laws. The State of Minnesota prohibits unauthorized access, disclosure, duplication, modification, diversion, destruction, loss, misuse, or theft of computer information in accordance with Minnesota Statutes, section 609.87 to 609.89.</value>
+    </labels>
+    <labels>
+        <fullName>Call_Attempted_Date_Set</fullName>
+        <categories>MEDSS Interview LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call Attempted Date Set</shortDescription>
+        <value
+        >An attempted call has been tracked and this case will re-queue five hours from now.  You will receive a new case momentarily.</value>
+    </labels>
+    <labels>
+        <fullName>Complete_Interview_Help_Text</fullName>
+        <categories>MEDSS Interview LWC</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Complete Interview Help Text</shortDescription>
+        <value
+        >Thank you for completing this interview, the Event has been set to Closed.</value>
+    </labels>
+    <labels>
+        <fullName>LoginPagePortalName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LoginPagePortalName</shortDescription>
+        <value>CICT Portal -</value>
+    </labels>
+    <labels>
+        <fullName>LoginPageVersionDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LoginPageVersionDate</shortDescription>
+        <value>Thur, Apr 08, 2021</value>
+    </labels>
+    <labels>
+        <fullName>LoginPageVersionNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LoginPageVersionNumber</shortDescription>
+        <value>Version 1.7.0</value>
+    </labels>
+    <labels>
+        <fullName>Medss_RedirectURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medss_RedirectURL</shortDescription>
+        <value
+        >https://medssdemo.web.health.state.mn.us/medssdemo/main.do?CaseKey=71612501&amp;amp;qpkgID=71612573</value>
+    </labels>
+    <labels>
+        <fullName>Medss_UnloadCaseURL</fullName>
+        <categories>Used for closing Case in MEDSS</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Medss_UnloadCaseURL</shortDescription>
+        <value
+        >https://medssdemo.web.health.state.mn.us/medssdemo/main.do?unloadCase=true</value>
+    </labels>
+</CustomLabels>

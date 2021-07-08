@@ -1,0 +1,54 @@
+{
+    "actions": [
+        {
+            "id": "uid-0",
+            "type": "SE_Start",
+            "meta": {},
+            "controls": {},
+            "ports": { "done": "uid-24" },
+            "position": [-1232, -608]
+        },
+        {
+            "id": "uid-5",
+            "type": "SE_End",
+            "meta": {},
+            "controls": {},
+            "ports": {},
+            "position": [-16, 80]
+        },
+        {
+            "id": "uid-24",
+            "type": "SE_Log",
+            "meta": {},
+            "controls": {
+                "level": "warn",
+                "message": "STARTING onEnded CTI FLOW >>>>"
+            },
+            "ports": { "done": "uid-25" },
+            "position": [-896, -416]
+        },
+        {
+            "id": "uid-25",
+            "type": "SE_SFRunApex",
+            "meta": {},
+            "controls": {
+                "apexClass": "MEDSS_EventController",
+                "methodName": "clearOutAmazonCTIFields",
+                "methodParams": "$.actions.uid-18.results.string"
+            },
+            "ports": { "success": "uid-5", "failure": "uid-26" },
+            "position": [-448, -304]
+        },
+        {
+            "id": "uid-26",
+            "type": "SE_Log",
+            "meta": {},
+            "controls": {
+                "level": "warn",
+                "message": "$.actions.uid-25.results.runApex"
+            },
+            "ports": { "done": "uid-5" },
+            "position": [-720, 16]
+        }
+    ]
+}

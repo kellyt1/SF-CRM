@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Medss</masterLabel>
+    <isExposed>true</isExposed>
+    <description>General Message channel for Medss</description>
+    <lightningMessageFields>
+        <fieldName>houseHoldCases</fieldName>
+        <description>This is a Lightning Message Channel to send message while closing the case through Medss My work Cmp</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>closeTabInSalesforce</fieldName>
+        <description>This is a Lightning Message Channel to send message to close SF tab</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

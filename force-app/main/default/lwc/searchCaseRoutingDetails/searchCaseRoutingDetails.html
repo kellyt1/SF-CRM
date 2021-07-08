@@ -1,0 +1,76 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input
+                name="caseInput"
+                type="text"
+                label="Enter a case number, MEDSS Event ID or MN ID to search for case routing details -- search for one case at a time"
+                onchange={handleInput}
+            ></lightning-input>
+        </div>
+        <div>
+            <lightning-button
+                class="slds-m-around_medium"
+                variant="brand"
+                slot="actions"
+                label="Search"
+                onclick={searchCases}
+            >
+            </lightning-button>
+        </div>
+        <template if:true={caseSearchResult}>
+            <div class="slds-m-bottom_small" style="text-align: center"></div>
+            <div class="slds-m-bottom_small">
+                <p class="slds-p-horizontal_small">
+                    <template for:each={assignment} for:item="assign">
+                        <div key={assign.mnId} class="slds-grid slds-gutters slds-m-left_large">
+                            <div class="slds-col slds-m-bottom_small">
+                            <strong><u>Case Information: </u></strong>
+                            <br>
+                            MEDSS Event ID: {assign.medssId}
+                            <br>
+                            MN ID: {assign.mnId}
+                            <br>
+                            Salesforce Case Number: {assign.sfCaseNumber}
+                            <br>
+                            County: {assign.county}
+                            <template if:true={caseOnDoNotCallList}>
+                                <br>
+                                <strong>Case is from DO NOT CALL County List</strong>
+                            </template>
+                            <template if:true={caseOnCountiesWithoutCI}>
+                                <br>
+                                <strong>Case is from Counties Without CI List</strong>
+                            </template>
+                            <br>
+                            Interview Jurisdiction: {assign.interviewJurisdiction}
+                            <br>
+                            Subregion MEDSS Code: {assign.subRegionCode}
+                            <br>
+                            </div>
+                            <div class="slds-col slds-m-bottom_small">
+                                <strong><u>Routing Details: </u></strong>
+                                <br>
+                                Current Case Owner: {assign.owner}
+                                <br>
+                                Case Status: {assign.status}
+                                <br>
+                                Routing Type: {assign.routingType}
+                                <br>
+                                Call Attempt Date (if applicable): {assign.callAttemptDate}
+                                <br>
+                                <strong>{assign.callAttempt}
+                                <br>
+                                {assign.pushedToAgent}
+                                <br>
+                                {assign.agedToRegionalQueue}</strong>
+                                <br>
+                                Required Skills: {assign.skills}
+                            </div>
+                        </div>
+                    </template>
+                </p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

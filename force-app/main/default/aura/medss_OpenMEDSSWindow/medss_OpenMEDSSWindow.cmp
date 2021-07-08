@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+    <lightning:omniToolkitAPI aura:id="omniToolkit" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler event="lightning:omniChannelStatusChanged" action="{! c.onStatusChanged }"/>
+    <aura:attribute name="isReceiveInboundCallStatus" type="Boolean" default="false"/>
+
+    <!-- Only display the button if the user is logged in to the 'Receive Inbound Calls' Omni-Channel Status -->
+    <aura:if isTrue="{!v.isReceiveInboundCallStatus}">
+      <div class="slds-align_absolute-center slds-box slds-theme_default">
+        <lightning:button class="slds-size_4-of-12" variant="brand" label="Open New MEDSS Window" iconPosition="right" onclick="{!c.openMedssWindow }" />   
+        <!-- Message to user to click the button to open a new MEDSS window-->
+        &nbsp; Click here to open a new MEDSS window. 
+     <!-- </div> -->
+    
+    </div>
+    </aura:if>
+
+</aura:component>

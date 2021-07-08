@@ -1,0 +1,32 @@
+<aura:component
+    implements="lightning:homeTemplate"
+    description="A home page with 2
+    columns and a Header."
+>
+    <aura:attribute
+        name="header"
+        type="Aura.Component[]"
+        description="Header region"
+    />
+    <aura:attribute name="left_column" type="Aura.Component[]" />
+    <aura:attribute name="right_column" type="Aura.Component[]" />
+    <div>
+        <div>{!v.header}</div>
+        <lightning:layout horizontalAlign="spread" pullToBoundary="small">
+            <lightning:layoutItem
+                size="6"
+                flexibility="grow"
+                padding="around-small"
+            >
+                {!v.left_column}
+            </lightning:layoutItem>
+            <lightning:layoutItem
+                size="6"
+                flexibility="grow"
+                padding="around-small"
+            >
+                {!v.right_column}
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

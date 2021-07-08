@@ -1,0 +1,6 @@
+:host {
+    --sds-c-button-brand-color-background: #78be21;
+    --sds-c-button-brand-text-color: black;
+    font-size: large;
+    font-weight: bold;
+}

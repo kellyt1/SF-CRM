@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Display Queue Members</masterLabel>
+    <description>Displays the members of the queue selected</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property
+                name="queueId"
+                type="String"
+                label="Queue ID"
+                description="ID of the queue to query and return list of members"
+            />
+            <property
+                name="skillId"
+                type="String"
+                label="Skill ID"
+                description="ID of the Skill to query and return list of members"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

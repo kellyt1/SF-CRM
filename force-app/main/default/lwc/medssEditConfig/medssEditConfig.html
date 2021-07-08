@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Configuration" class="slds-p-around_small">
+        <lightning-tabset>
+            <template if:true={tabOne}>
+                <lightning-tab label="Do Not Call">
+                    <c-medss-edit-dnc-config></c-medss-edit-dnc-config>
+                </lightning-tab>
+            </template>
+            <lightning-tab label="Counties Without CI">
+                <c-medss-edit-counties-w-out-ci-config></c-medss-edit-counties-w-out-ci-config>
+            </lightning-tab>
+            <lightning-tab label="Slack Tags">
+                <c-medss-edit-slack-tag-config></c-medss-edit-slack-tag-config>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

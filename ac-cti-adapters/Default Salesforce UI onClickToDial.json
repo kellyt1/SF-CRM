@@ -1,0 +1,36 @@
+{
+    "actions": [
+        {
+            "id": "0",
+            "type": "SE_Start",
+            "meta": {},
+            "controls": {},
+            "ports": { "done": "1" },
+            "position": [-288, 16]
+        },
+        {
+            "id": "1",
+            "type": "SE_AgentDialNumber",
+            "meta": {},
+            "controls": { "phoneNumber": "$.payload.number", "queueARN": "" },
+            "ports": { "success": "uid-3", "failure": "2" },
+            "position": [10, 10]
+        },
+        {
+            "id": "2",
+            "type": "SE_End",
+            "meta": {},
+            "controls": null,
+            "ports": {},
+            "position": [656, 128]
+        },
+        {
+            "id": "uid-3",
+            "type": "SE_SFShowSoftphonePanel",
+            "meta": {},
+            "controls": {},
+            "ports": { "success": "2", "failure": "2" },
+            "position": [368, 16]
+        }
+    ]
+}

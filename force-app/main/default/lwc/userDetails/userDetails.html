@@ -1,0 +1,85 @@
+<!--
+    Author             : jon.ferneau@slalom.com
+    Last Modified By   : Jon Ferneau
+    Last Modified On   : 01/27/2021
+-->
+
+<template>
+    <lightning-card>
+        <div class="slds-m-bottom_small" style="text-align: center">
+            <h1 class="slds-page-header__title slds-m-left--small">
+                <strong><u>{label.CurrentCallBackInformationLabel}</u></strong>
+            </h1>
+            <p class="slds-p-horizontal_small slds-text-body_small">
+                {label.LoggedInAsLabel} {name}
+            </p>
+        </div>
+
+        <div class="slds-m-bottom_small">
+            <p class="slds-p-horizontal_small">
+                <strong><u>{label.CurrentRegionLabel}</u></strong>
+
+                <template
+                    for:each={currentRegions.data}
+                    for:item="currentRegion"
+                >
+                    <div key={currentRegion.Id} class="slds-m-left_large">
+                        {currentRegion.Group.Name}
+                    </div>
+                </template>
+            </p>
+        </div>
+
+        <div class="slds-m-bottom_small">
+            <p class="slds-p-horizontal_small">
+                <strong><u>{label.CurrentJurisdictionLabel}</u></strong>
+                <!-- Since we can have multiple Skills per User, we need to iterate over each unique SkillId to return all Skills for the logged in User -->
+                <template
+                    for:each={currentJurisdictions.data}
+                    for:item="currentJurisdiction"
+                >
+                    <!-- Using a key to uniquely identify and return each individual skill for a user -->
+                    <div key={currentJurisdiction.Id} class="slds-m-left_large">
+                        {currentJurisdiction.Skill.MasterLabel}
+                    </div>
+                </template>
+            </p>
+        </div>
+
+        <!-- Not currently used since we are only displaying one call back number on the component. -->
+        <!--
+        <div class="slds-m-bottom_small">
+            <p class="slds-p-horizontal_small">
+                <strong><u>{label.CallBackNumbersLabel}</u></strong>
+        -->
+        <!-- Since we can have many callback numbers per County, we need to iterate over each unique Queue & County to return all County's callback numbers for the logged in User -->
+        <!--    
+                        <template
+                        for:each={callbackNumbers.data}
+                        for:item="callbackNumber"
+                        >
+                    -->
+        <!-- Using a key to uniquely identify and return each individual callback number -->
+        <!--
+                    <div key={callbackNumber.Id} class="slds-m-left_large">
+                    <strong>{callbackNumber.Label}: </strong>
+                        {callbackNumber.Call_Back_Number__c}
+                    </div>
+                </template>
+            </p>
+        </div>
+        -->
+
+        <!-- Using this new div to display the single Call Back number that is controlled by custom labels to allow for quick changing. -->
+        <div class="slds-m-bottom_small">
+            <p class="slds-p-horizontal_small">
+                <strong><u>{label.CallBackNumbersLabel}</u></strong>
+            </p>
+
+            <p class="slds-m-left_x-large">
+                <strong>{label.CaseInvestigatorCallbackNumberLabel} </strong>
+                {label.PhoneNumberforCaseInvestigatorCallBackLabel}
+            </p>
+        </div>
+    </lightning-card>
+</template>

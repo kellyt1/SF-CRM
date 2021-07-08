@@ -1,0 +1,5 @@
+<design:component>
+    
+    <design:attribute name="urlString" label="URL endpoint for redirect" />
+	
+</design:component>

@@ -1,0 +1,92 @@
+<apex:page
+    showHeader="false"
+    standardStylesheets="false"
+    sidebar="false"
+    applyHtmlTag="false"
+    applyBodyTag="false"
+    docType="html-5.0"
+>
+    <html>
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+            />
+            <!-- Import the Design System style sheet -->
+            <apex:slds />
+        </head>
+        <body>
+            <style>
+                body {
+                    background-color: white;
+                }
+                .container {
+                    font-family: arial;
+                    margin-top: 150px;
+                }
+                .logo {
+                    text-align: center;
+                }
+                .mainHeader {
+                    color: red;
+                    font-weight: bold;
+                    font-size: 34px;
+                    text-decoration: underline;
+                    text-align: center;
+                }
+                .secondaryHeader {
+                    color: red;
+                    font-size: 20px;
+                    text-align: center;
+                }
+                .paragraph {
+                    font-size: 16px;
+                    text-align: center;
+                }
+                .footer {
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-top: 80px;
+                }
+            </style>
+            <!-- REQUIRED SLDS WRAPPER -->
+            <div class="slds-scope">
+                <!-- PRIMARY CONTENT WRAPPER -->
+                <!-- RESPONSIVE GRID -->
+                <div class="container">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size--1-of-1">
+                            <div class="logo slds-m-around--large">
+                                <img
+                                    src="{!$Resource.MDH_Logo}"
+                                    alt="MDH Logo"
+                                />
+                            </div>
+                            <div
+                                class="mainHeader slds-text-align_center slds-m-around--medium"
+                            >
+                                {!$Label.AttentionHeading}
+                            </div>
+                            <div
+                                class="secondaryHeader slds-text-align_center slds-m-around--medium"
+                            >
+                                {!$Label.AttentionAccessWarning}
+                            </div>
+                            <div class="paragraph slds-text-align_center">
+                                {!$Label.AttentionMessage}
+                            </div>
+                            <div class="footer slds-text-align_center">
+                                {!$Label.LoginPagePortalName}
+                                {!$Label.LoginPageVersionNumber}<br />
+                                {!$Label.LoginPageVersionDate}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>
+</apex:page>

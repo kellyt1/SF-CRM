@@ -1,0 +1,29 @@
+<template>
+    <div>
+        <lightning-button-group>
+            <!-- LMS Home Page Button attributes -->
+            <lightning-button
+                variant="brand"
+                title={label.TrainingResourcesLabel}
+                label={label.TrainingResourcesLabel}
+                aria-label={label.TrainingResourcesLabel}
+                role="button"
+                onclick={navigateToTrainingResourcesHomePage}
+                class="slds-max-large-button--horizontal"
+            >
+            </lightning-button>
+
+            <!-- Slack Announcements Page Button attributes -->
+            <lightning-button
+                variant="brand"
+                title={label.SlackAnnouncementsLabel}
+                label={label.SlackAnnouncementsLabel}
+                aria-label={label.SlackAnnouncementsLabel}
+                role="button"
+                onclick={navigateToSlackAnnouncementsPage}
+                class="slds-max-large-button--horizontal slds-m-left_small"
+            >
+            </lightning-button>
+        </lightning-button-group>
+    </div>
+</template>

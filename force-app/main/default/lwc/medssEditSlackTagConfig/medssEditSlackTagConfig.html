@@ -1,0 +1,91 @@
+<template>
+    <lightning-card>
+        <lightning-button
+            class="slds-p-left_small"
+            variant="brand"
+            slot="actions"
+            label="Add"
+            onclick={handleAdd}
+        >
+        </lightning-button>
+        <lightning-button
+            class="slds-p-left_small"
+            variant="brand"
+            slot="actions"
+            label="Delete"
+            onclick={handleDelete}
+        >
+        </lightning-button>
+        <div class="slds-p-around_small">
+            <lightning-datatable
+                data={slackTags}
+                columns={columns}
+                key-field="Id"
+                onrowselection={getSelectedId}
+                sorted-by={sortedBy}
+                sorted-direction={sortedDirection}
+                onsort={handleColumnSorting}
+            >
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+    <template if:true={showModal}>
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-labelledby="modal-heading-01"
+            aria-modal="true"
+            aria-describedby="modal-content-id-1"
+            class="slds-modal slds-fade-in-open"
+        >
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2
+                        id="modal-heading-01"
+                        class="slds-modal__title slds-hyphenate"
+                    >
+                        Add Tag
+                    </h2>
+                </header>
+                <div
+                    class="slds-modal__content slds-p-around_medium"
+                    id="modal-content-id-1"
+                >
+                    <p>
+                        <lightning-input
+                            type="text"
+                            name="tagName"
+                            label="Tag Name"
+                            onchange={onInputChange}
+                        ></lightning-input>
+                        <lightning-input
+                            type="text"
+                            name="tagId"
+                            label="Tag Id"
+                            onchange={onInputChange}
+                        ></lightning-input>
+                    </p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        class="slds-p-left_small"
+                        slot="actions"
+                        label="Cancel"
+                        onclick={handleCancel}
+                    >
+                    </lightning-button>
+                    <lightning-button
+                        class="slds-p-left_small"
+                        variant="brand"
+                        slot="actions"
+                        label="Save"
+                        disabled={disableSave}
+                        onclick={handleSave}
+                    >
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
+     <!-- your Workspace api tag should be there to make it work -->
+     <lightning:workspaceAPI aura:id="workspace"/>
+
+     <lightning:messageChannel aura:id="Medss"
+                              type="Medss__c"
+                              scope="APPLICATION"
+                              onMessage="{!c.handleChanged}"
+    />
+</aura:component>	

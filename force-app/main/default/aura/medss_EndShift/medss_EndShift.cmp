@@ -1,0 +1,24 @@
+<aura:component
+      implements="force:lightningQuickAction,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes,force:hasSObjectName" controller="MEDSS_EventController">
+<lightning:omniToolkitAPI aura:id="omniToolkit" />
+<lightning:workspaceAPI aura:id="workspace"/>
+<aura:attribute name="isLoggedOut" type="Boolean" default="false"/>
+<!-- <div class="slds-box slds-theme_default"> -->
+  <aura:if isTrue="{!v.isLoggedOut}">
+    <ui:message title="Confirmation" severity="confirm" closable="true">
+      You are offline in Omni Channel and Amazon Connect. Please logout of Amazon Connect. 
+    </ui:message>
+ </aura:if>
+  <div class="slds-align_absolute-center slds-box slds-theme_default">
+    
+    <lightning:button class="slds-size_4-of-12" variant="brand" label="End Shift" iconPosition="right" onclick="{!c.endShiftForAgent }" />
+    <!-- <lightning:button class="slds-size_4-of-12" variant="brand" label="log  out" iconPosition="right" onclick="{!c.logout }" /> -->
+
+    <!-- Status of Omni channel to offline-->
+    <!-- <lightning:helptext content=" Click here to log out Omni channel"/> &nbsp; -->
+    &nbsp; {!$Label.c.Medss_EndShift_HelpText}
+ <!-- </div> -->
+
+</div>
+
+</aura:component>

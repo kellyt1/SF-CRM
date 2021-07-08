@@ -1,0 +1,31 @@
+<template>
+    <template if:true={showQueues}>
+        <div class="slds-p-around_small">
+            <lightning-datatable
+                data={currentRegions}
+                columns={queueColumns}
+                key-field="Id"
+                sorted-by={sortBy}
+                sorted-direction={sortDirection}
+                onsort={handleSortQueuedata}
+                hide-checkbox-column="true"
+            >
+            </lightning-datatable>
+        </div>
+    </template>
+
+    <template if:true={showSkills}>
+        <div class="slds-p-around_small">
+            <lightning-datatable
+                data={currentSkills}
+                columns={queueColumns}
+                key-field="Id"
+                sorted-by={sortBy}
+                sorted-direction={sortDirection}
+                onsort={handleSortSkilldata}
+                hide-checkbox-column="true"
+            >
+            </lightning-datatable>
+        </div>
+    </template>
+</template>
